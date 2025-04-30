@@ -1,0 +1,216 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background-color: #222;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+header .logo-container img {
+  height: 50px; /* Adjust as needed */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin-left: 1rem;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 400;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ff6600; /* Highlight color */
+}
+
+.book-now-button {
+  background-color: #ff6600;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.book-now-button:hover {
+  background-color: #cc5200;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+}
+
+.hero-section {
+  background-image: url('${pageContext.request.contextPath}/resources/images/hero-image.jpg'); /* Replace with actual image path */
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 5rem 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  max-width: 1200px;
+}
+
+.hero-section h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #ffffff; /* Changed to white for better visibility */
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8); /* Increased shadow for better contrast */
+  background-color: rgba(255, 102, 0, 0.7); /* Semi-transparent orange background */
+  padding: 0.5rem 2rem;
+  border-radius: 8px;
+}
+
+.hero-description {
+  font-size: 1.2rem;
+  max-width: 80%;
+  margin: 0 auto 2rem auto;
+  color: #ffffff; /* Brighter white for better visibility */
+  line-height: 1.7;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.7); /* Darker semi-transparent background for better readability */
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.karts-section {
+  width: 100%;
+  padding: 2rem;
+  text-align: center;
+  background-color: #f8f8f8;
+}
+
+.karts-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.karts-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #ff6600;
+}
+
+.kart-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.kart-card {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.kart-card img {
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  height: auto;
+}
+
+.kart-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #444;
+}
+
+.kart-card p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+footer {
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav ul li {
+    margin: 0.5rem 0;
+  }
+
+  .hero-section h1 {
+    font-size: 2.5rem;
+    padding: 0.4rem 1.5rem;
+  }
+
+  .hero-description {
+    font-size: 1.1rem;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section h1 {
+    font-size: 2rem;
+    padding: 0.3rem 1rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+    max-width: 95%;
+    padding: 1rem;
+  }
+  
+  .karts-section .kart-grid {
+    grid-template-columns: 1fr;
+  }
+}

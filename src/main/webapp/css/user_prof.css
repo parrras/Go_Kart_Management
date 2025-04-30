@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: #f4f4f4; /* Light gray background similar to the image */
+    color: #333; /* Dark gray text */
+    line-height: 1.6;
+    padding-top: 20px; /* Add some padding at the top */
+}
+
+.container {
+    max-width: 900px; /* Max width for the content */
+    margin: 20px auto; /* Center the container and add vertical margin */
+    padding: 20px;
+    background-color: #fff; /* White background for the content area */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 8px; /* Rounded corners */
+}
+
+h1 {
+    text-align: left; /* Align heading to the left as in the image */
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.profile-section {
+    display: flex; /* Use flexbox to layout info and avatar side-by-side */
+    align-items: center; /* Vertically align items in the center */
+    gap: 40px; /* Space between info and avatar */
+    margin-bottom: 30px;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.profile-info {
+    flex-grow: 1; /* Allow info block to take up available space */
+    background-color: #e9e9e9; /* Light gray background for info block */
+    padding: 20px;
+    border-radius: 8px;
+    display: flex; /* Use flexbox for the info columns */
+    gap: 30px; /* Space between the two info columns */
+    flex-wrap: wrap; /* Allow info columns to wrap */
+}
+
+.info-block {
+    flex: 1; /* Allow each info block to take equal space */
+    min-width: 200px; /* Minimum width before wrapping */
+}
+
+.profile-info p {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.profile-info strong {
+    font-weight: 600; /* Make labels slightly bolder */
+    display: inline-block; /* Ensures strong doesn't mess up flex layout */
+    width: 120px; /* Give labels a fixed width for alignment (adjust as needed) */
+}
+
+.profile-avatar {
+    width: 150px; /* Size of the avatar container */
+    height: 150px;
+    border-radius: 50%; /* Make it circular */
+    overflow: hidden; /* Hide anything outside the circle */
+    flex-shrink: 0; /* Prevent shrinking */
+    background-color: #ccc; /* Placeholder background if image isn't loaded */
+}
+
+.profile-avatar img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the area without distorting aspect ratio */
+}
+
+.profile-actions {
+    display: flex;
+    gap: 15px; /* Space between buttons */
+    margin-top: 20px;
+}
+
+.update-button,
+.logout-button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.update-button {
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+}
+
+.update-button:hover {
+    background-color: #333; /* Darker black on hover */
+}
+
+.logout-button {
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+}
+
+.logout-button:hover {
+     background-color: #333; /* Darker black on hover */
+}
+
+/* Basic responsiveness */
+@media (max-width: 768px) {
+    .profile-section {
+        flex-direction: column; /* Stack info and avatar vertically */
+        gap: 20px;
+    }
+
+    .profile-avatar {
+        margin-bottom: 20px; /* Add space below avatar when stacked */
+    }
+
+    .profile-info {
+        gap: 20px; /* Reduce gap in info columns when stacked */
+    }
+
+    .profile-actions {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 10px;
+    }
+
+    .update-button,
+    .logout-button {
+        width: 100%; /* Make buttons full width when stacked */
+        text-align: center;
+    }
+
+    .profile-info strong {
+         width: 100%; /* Allow labels to take full width when stacked */
+         margin-bottom: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8em;
+    }
+}
