@@ -8,19 +8,22 @@ public class BookingModel {
     private int duration;
     private double price;
     private int kartID;
+    private String KartType;
 
     // Default constructor
     public BookingModel() {
     }
 
     // Constructor with fields
-    public BookingModel(int userID, String bookingDate, String paymentStatus, int duration, double price, int kartID) {
+    public BookingModel(int userID, String bookingDate, String paymentStatus, int duration, double price, int kartID, String KartType) {
         this.userID = userID;
         this.bookingDate = bookingDate;
         this.paymentStatus = paymentStatus;
         this.duration = duration;
         this.price = price;
         this.kartID = kartID;
+        this.KartType = KartType;
+
     }
 
     // Getters and Setters
@@ -79,17 +82,14 @@ public class BookingModel {
     public void setKartID(int kartID) {
         this.kartID = kartID;
     }
-
-    @Override
-    public String toString() {
-        return "BookingModel{" +
-                "bookingID=" + bookingID +
-                ", userID=" + userID +
-                ", bookingDate='" + bookingDate + '\'' +
-                ", paymentStatus='" + paymentStatus + '\'' +
-                ", duration=" + duration +
-                ", price=" + price +
-                ", kartID=" + kartID +
-                "}";
+    
+    public String getkartType() {
+        return KartType;
     }
+
+    public void setkartType(String KartType) {
+        this.KartType = KartType;
+    }
+
+    
 }

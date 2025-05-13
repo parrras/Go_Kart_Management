@@ -1,61 +1,105 @@
-/* header.css */
 header {
-    background-color: #222;
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: white;
+	background-color: #222;
+	padding: 1rem 2rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	color: white;
 }
 
 header .logo-container img {
-    height: 50px; /* Adjust as needed */
+	height: 50px;
+}
+
+nav {
+	display: flex;
+	align-items: center;
+	gap: 2rem;
 }
 
 nav ul {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    margin-left: 1rem;
+	list-style: none;
+	display: flex;
+	margin: 0;
+	padding: 0;
+	gap: 1.5rem;
+	align-items: center;
 }
 
 nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: 400;
-    padding: 0.5rem 1rem;
-    transition: color 0.3s ease;
+	color: white;
+	text-decoration: none;
+	font-weight: 400;
+	padding: 0.5rem 0.75rem;
+	transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #ff6600; /* Highlight color */
+	color: #ff6600;
 }
 
 .book-now-button {
-    background-color: #ff6600;
-    color: white;
-    padding: 0.75rem 1.5rem;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: background-color 0.3s ease;
+	background-color: #ff6600;
+	color: white;
+	padding: 0.6rem 1.25rem;
+	border-radius: 8px;
+	text-decoration: none;
+	font-weight: 500;
+	margin-left: 1rem;
+	transition: background-color 0.3s ease;
 }
 
 .book-now-button:hover {
-    background-color: #cc5200;
+	background-color: #cc5200;
+}
+
+.profile-button {
+	width: 42px;
+	height: 42px;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #ddd;
+	cursor: pointer;
+	border: none;
+	margin-left: 1.2rem;
+	text-decoration: none;
+	color: #333;
+	transition: background-color 0.3s ease;
+}
+
+.profile-button:hover {
+	background-color: #ccc;
+}
+
+.profile-button i {
+	font-size: 1.2rem;
+	color: #333;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-    }
+	header {
+		flex-direction: column;
+		align-items: flex-start;
+	}
 
-    nav ul li {
-        margin: 0.5rem 0;
-    }
+	nav {
+		flex-direction: column;
+		align-items: flex-start;
+		width: 100%;
+	}
+
+	nav ul {
+		flex-direction: column;
+		width: 100%;
+		gap: 0.75rem;
+	}
+
+	.book-now-button,
+	.profile-button {
+		margin-left: 0;
+		margin-top: 0.5rem;
+	}
 }

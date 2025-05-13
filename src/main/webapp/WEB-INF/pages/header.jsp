@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GoKart Management</title>
     <link href="${pageContext.request.contextPath}/css/header.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header>
@@ -21,17 +22,13 @@
                 <li><a href="${pageContext.request.contextPath}/about">About Us</a></li>
                 <li><a href="${pageContext.request.contextPath}/contactUs">Contact Us</a></li>
                 <li><a href="${pageContext.request.contextPath}/activities">Activities</a></li>
-
-                <c:choose>
-                    <c:when test="${not empty sessionScope.user}">
-                        <li><a href="${pageContext.request.contextPath}/logout">Log Out</a></li>
-                    </c:when>
-                    <c:otherwise>
-                        <li><a href="${pageContext.request.contextPath}/login">Login</a></li>
-                    </c:otherwise>
-                </c:choose>
-
-                <li><a href="${pageContext.request.contextPath}/book" class="book-now-button">Book Now</a></li>
+                <li><a href="${pageContext.request.contextPath}/logout">Log Out</a></li>
+                <li>
+                    <a href="${pageContext.request.contextPath}/userprofile" class="profile-button">
+                        <i class="fas fa-user"></i>
+                    </a>
+                </li>
+                <li><a href="${pageContext.request.contextPath}/booking" class="book-now-button">Book Now</a></li>
             </ul>
         </nav>
     </header>

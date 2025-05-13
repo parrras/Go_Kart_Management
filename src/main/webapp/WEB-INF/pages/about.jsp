@@ -8,6 +8,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/about.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/home.css">
+    <link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
@@ -25,7 +27,12 @@
                 <li><a href="${pageContext.request.contextPath}/contactUs">Contact Us</a></li>
                 <li><a href="${pageContext.request.contextPath}/activities">Activities</a></li>
                 <li><a href="${pageContext.request.contextPath}/logout">Log Out</a></li>
-                <li><a href="#" class="book-now-button">Book Now</a></li>
+                <li>
+                    <a href="${pageContext.request.contextPath}/userprofile" class="profile-button">
+                        <i class="fas fa-user"></i>
+                    </a>
+                </li>
+                <li><a href="${pageContext.request.contextPath}/booking" class="book-now-button">Book Now</a></li>
             </ul>
         </nav>
     </header>

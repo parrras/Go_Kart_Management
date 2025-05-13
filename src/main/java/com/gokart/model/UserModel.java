@@ -15,6 +15,7 @@ public class UserModel {
     private String password; // Store hashed password
     private String role;
 
+
     // Default constructor
     public UserModel() {
     }
@@ -35,14 +36,15 @@ public class UserModel {
     }
 
     // Getters and Setters
-    public int getUserId() {
+    public int getUserID() {
         return userId;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setUserID(int userID) {
+        this.userId = userID;
     }
 
+    // Getter and Setter for firstName
     public String getFirstName() {
         return firstName;
     }
@@ -51,6 +53,7 @@ public class UserModel {
         this.firstName = firstName;
     }
 
+    // Getter and Setter for lastName
     public String getLastName() {
         return lastName;
     }
@@ -59,6 +62,7 @@ public class UserModel {
         this.lastName = lastName;
     }
 
+    // Getter and Setter for username
     public String getUsername() {
         return username;
     }
@@ -67,6 +71,7 @@ public class UserModel {
         this.username = username;
     }
 
+    // Getter and Setter for birthday
     public String getBirthday() {
         return birthday;
     }
@@ -75,6 +80,7 @@ public class UserModel {
         this.birthday = birthday;
     }
 
+    // Getter and Setter for gender
     public String getGender() {
         return gender;
     }
@@ -83,6 +89,7 @@ public class UserModel {
         this.gender = gender;
     }
 
+    // Getter and Setter for email
     public String getEmail() {
         return email;
     }
@@ -91,6 +98,7 @@ public class UserModel {
         this.email = email;
     }
 
+    // Getter and Setter for phoneNumber
     public String getPhoneNumber() {
         return phoneNumber;
     }
@@ -99,21 +107,23 @@ public class UserModel {
         this.phoneNumber = phoneNumber;
     }
 
+    // Getter and Setter for password
     public String getPassword() {
         return password;
     }
 
     public void setPassword(String password) {
-        this.password = password; // Remember to hash before storing
+        this.password = password;
     }
-    
-    public String getRole() {
-		return role;
-	}
 
-	public void setRole(String role) {
-		this.role = role;
-	}
+    // Getter and Setter for role
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
 	
     
 
