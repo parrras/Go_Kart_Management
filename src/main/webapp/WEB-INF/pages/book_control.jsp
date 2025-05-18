@@ -93,8 +93,7 @@
                 </div>
                 <div class="form-row">
                     <label for="kart-id">Kart ID:</label>
-                    <input type="text" id="kart-id" name="kartID" required> <!-- Note: name="kartID" to match servlet -->
-                </div>
+                    <input type="text" id="kart-id" name="kartID" required> </div>
                 <div class="form-row">
                     <label for="booking-date">Booking Date:</label>
                     <input type="date" id="booking-date" name="bookingDate" required>

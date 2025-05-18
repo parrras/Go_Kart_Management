@@ -107,26 +107,29 @@ public class UserDoa {
     }
 
     // Update User
-    public void updateUser(UserModel user) {
-        String sql = "UPDATE users SET firstName=?, lastName=?, username=?, birthday=?, gender=?, email=?, phoneNumber=?, role=? WHERE userID=?";
+    public boolean updateUser(UserModel user) {
+        String sql = "UPDATE users SET firstName=?, lastName=?, birthday=?, gender=?, email=?, phoneNumber=?, role=? WHERE userID=?";
 
         try (Connection connection = Dbconfig.getDbConnection();
              PreparedStatement stmt = connection.prepareStatement(sql)) {
 
             stmt.setString(1, user.getFirstName());
             stmt.setString(2, user.getLastName());
-            stmt.setString(3, user.getUsername());
-            stmt.setDate(4, user.getBirthday() != null ? Date.valueOf(user.getBirthday()) : null);
-            stmt.setString(5, user.getGender());
-            stmt.setString(6, user.getEmail());
-            stmt.setString(7, user.getPhoneNumber());
-            stmt.setString(8, user.getRole());
-            stmt.setInt(9, user.getUserID());
+            stmt.setDate(3, user.getBirthday() != null ? Date.valueOf(user.getBirthday()) : null);
+            stmt.setString(4, user.getGender());
+            stmt.setString(5, user.getEmail());
+            stmt.setString(6, user.getPhoneNumber());
+            stmt.setString(7, user.getRole());
+            stmt.setInt(8, user.getUserID());
 
-            stmt.executeUpdate();
+            int rowsUpdated = stmt.executeUpdate();
+            System.out.println("Rows updated: " + rowsUpdated);  // Debug log
+            return rowsUpdated > 0;
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        return false;
     }
 
     // Delete User
@@ -143,7 +146,8 @@ public class UserDoa {
             e.printStackTrace();
         }
     }
-     public UserModel getUserById(int userId) {
+
+    public UserModel getUserById(int userId) {
         UserModel user = null;
         String sql = "SELECT userID, firstName, lastName, username, birthday, gender, email, phoneNumber, role FROM users WHERE userID = ?";
 
@@ -160,7 +164,7 @@ public class UserDoa {
                     user.setUsername(resultSet.getString("username"));
                     Date sqlBirthday = resultSet.getDate("birthday");
                     if (sqlBirthday != null) {
-                         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+                        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
                         user.setBirthday(sdf.format(sqlBirthday));
                     }
                     user.setGender(resultSet.getString("gender"));

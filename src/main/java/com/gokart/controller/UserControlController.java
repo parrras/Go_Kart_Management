@@ -70,14 +70,14 @@ public class UserControlController extends HttpServlet {
             }
         } catch (ParseException e) {
             e.printStackTrace();
-             request.setAttribute("error", "Invalid date format. Please use yyyy-MM-dd.");
-             doGet(request, response);
-             return;
+            request.setAttribute("error", "Invalid date format. Please use yyyy-MM-dd.");
+            doGet(request, response);
+            return;
         }
         newUser.setGender(gender);
         newUser.setEmail(email);
         newUser.setPhoneNumber(phoneNumber);
-        newUser.setPassword(password); 
+        newUser.setPassword(password);
         newUser.setRole(role);
 
         userDoa.addUser(newUser);
@@ -102,7 +102,7 @@ public class UserControlController extends HttpServlet {
         updatedUser.setUsername(username);
         try {
             if (birthdayStr != null && !birthdayStr.isEmpty()) {
-                 Date parsedDate = sdf.parse(birthdayStr);
+                Date parsedDate = sdf.parse(birthdayStr);
                 updatedUser.setBirthday(sdf.format(parsedDate));
             }
         } catch (ParseException e) {
@@ -127,7 +127,6 @@ public class UserControlController extends HttpServlet {
         response.sendRedirect(request.getContextPath() + "/usercontrol");
     }
 
-
     private void searchUsers(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String searchTerm = request.getParameter("searchTerm");
         List<UserModel> allUsers = userDoa.getAllUsers();  // Get all users
@@ -145,7 +144,7 @@ public class UserControlController extends HttpServlet {
             }
             request.setAttribute("users", filteredUsers);
         } else {
-             request.setAttribute("users", allUsers);
+            request.setAttribute("users", allUsers);
         }
 
         request.getRequestDispatcher("/WEB-INF/pages/user_control.jsp").forward(request, response);

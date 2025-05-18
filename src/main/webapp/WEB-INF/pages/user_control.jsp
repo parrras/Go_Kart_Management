@@ -131,6 +131,10 @@
                     <label for="user-id">User ID:</label>
                     <input type="number" id="user-id" name="userID" readonly>
                 </div>
+                <div class="form-row">
+    			<label for="role">Role:</label>
+    			<input type="text" id="role" name="role" required>  
+    			</div>
                 <div class="form-actions">
                     <button type="submit" id="add-button">ADD</button>
                     <button type="submit" id="update-button">UPDATE</button>
@@ -209,12 +213,8 @@
         }
 
         addBtn.addEventListener("click", (event) => {
-        	if (selectedRow) {
         		formActionInput.value = (userIdInput.value) ? "update" : "add";
             	racerForm.submit();
-        	} else {
-                alert("Please select a user to add.");
-        	}
         });
 
         updateBtn.addEventListener("click", (event) => {
